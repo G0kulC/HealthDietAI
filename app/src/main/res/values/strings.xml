@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">HealthDiet AI</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="email">Email Address</string>
+    <string name="password">Password</string>
+    <string name="full_name">Full Name</string>
+    <string name="username">Username</string>
+    <string name="get_recommendation">Get My Recommendation</string>
+    <string name="health_report">Health Analysis Report</string>
+    <string name="bmi">BMI</string>
+    <string name="dietary_notes">Dietary Notes</string>
+    <string name="recommended_foods">Recommended Foods</string>
+    <string name="no_foods">No food recommendations available</string>
+    <string name="share">Share</string>
+</resources>
