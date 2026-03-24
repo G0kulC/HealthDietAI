@@ -42,7 +42,7 @@ class SplashFragment : Fragment() {
                     .build()
 
                 if (tokenManager.isLoggedIn()) {
-                    findNavController().navigate(R.id.action_splash_to_dashboard, null, navOptions)
+                    findNavController().navigate(R.id.action_splash_to_profile, null, navOptions)
                 } else {
                     findNavController().navigate(R.id.action_splash_to_login, null, navOptions)
                 }

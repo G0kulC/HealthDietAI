@@ -36,6 +36,7 @@ class AuthRepository @Inject constructor(private val apiService: ApiService) {
                 response.isSuccessful && response.body() != null -> {
                     NetworkResult.Success(response.body()!!)
                 }
+                response.code() == 400 -> NetworkResult.Error("Email or username already taken.", 400)
                 response.code() == 422 -> NetworkResult.Error("Invalid input. Please check your form fields.", 422)
                 response.code() >= 500 -> NetworkResult.Error("Server error. Please try again later.", response.code())
                 else -> NetworkResult.Error("Registration failed: ${response.message()}", response.code())

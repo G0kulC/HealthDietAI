@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="8dp"
+    android:layout_marginBottom="10dp"
     app:cardCornerRadius="12dp"
     app:cardElevation="2dp">
 
@@ -14,6 +14,7 @@
         android:orientation="vertical"
         android:padding="16dp">
 
+        <!-- Date and BMI category row -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -21,20 +22,19 @@
             android:gravity="center_vertical">
 
             <TextView
-                android:id="@+id/tvFoodName"
+                android:id="@+id/tvDate"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Food Name"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:textColor="#212121"/>
+                android:text="2026-03-24"
+                android:textSize="12sp"
+                android:textColor="#757575"/>
 
             <TextView
-                android:id="@+id/tvCalories"
+                android:id="@+id/tvBmiCategory"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="165 kcal"
+                android:text="Normal"
                 android:textSize="12sp"
                 android:textColor="@android:color/white"
                 android:background="@drawable/bg_calorie_badge"
@@ -43,34 +43,63 @@
 
         </LinearLayout>
 
+        <!-- BMI row -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="12dp">
+            android:gravity="center_vertical"
+            android:layout_marginTop="8dp">
+
+            <TextView
+                android:id="@+id/tvBmi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BMI 23.5"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="@color/primary"/>
+
+            <TextView
+                android:id="@+id/tvObesityLevel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Normal_Weight"
+                android:textSize="13sp"
+                android:textColor="#424242"
+                android:layout_marginStart="8dp"/>
+
+        </LinearLayout>
+
+        <!-- Stats row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:orientation="vertical"
-                android:gravity="center">
+                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="💪 Protein"
+                    android:text="BMR"
                     android:textSize="11sp"
                     android:textColor="#757575"/>
 
                 <TextView
-                    android:id="@+id/tvProtein"
+                    android:id="@+id/tvBmr"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="--g"
-                    android:textSize="14sp"
+                    android:text="-- kcal"
+                    android:textSize="13sp"
                     android:textStyle="bold"
-                    android:textColor="#4CAF50"/>
+                    android:textColor="#212121"/>
 
             </LinearLayout>
 
@@ -78,24 +107,23 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:orientation="vertical"
-                android:gravity="center">
+                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="🌾 Carbs"
+                    android:text="Daily Target"
                     android:textSize="11sp"
                     android:textColor="#757575"/>
 
                 <TextView
-                    android:id="@+id/tvCarbs"
+                    android:id="@+id/tvCalorieTarget"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="--g"
-                    android:textSize="14sp"
+                    android:text="-- kcal"
+                    android:textSize="13sp"
                     android:textStyle="bold"
-                    android:textColor="#FF9800"/>
+                    android:textColor="#212121"/>
 
             </LinearLayout>
 
@@ -103,24 +131,23 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:orientation="vertical"
-                android:gravity="center">
+                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="🫙 Fat"
+                    android:text="Confidence"
                     android:textSize="11sp"
                     android:textColor="#757575"/>
 
                 <TextView
-                    android:id="@+id/tvFat"
+                    android:id="@+id/tvConfidence"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="--g"
-                    android:textSize="14sp"
+                    android:text="--%"
+                    android:textSize="13sp"
                     android:textStyle="bold"
-                    android:textColor="#F44336"/>
+                    android:textColor="#212121"/>
 
             </LinearLayout>
 

@@ -15,5 +15,7 @@ data class RecommendationRequest(
     val physical_activity: Float,
     val water_intake: Float,
     val ncp: Float,
-    val tue: Float
+    val tue: Float,
+    val faf: Float? = null,
+    val ch2o: Float? = null
 )

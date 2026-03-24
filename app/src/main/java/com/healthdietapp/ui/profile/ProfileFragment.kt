@@ -131,6 +131,8 @@ class ProfileFragment : Fragment() {
 
     private fun buildRequest(): RecommendationRequest {
         val heightCm = binding.etHeight.text.toString().toFloat()
+        val activityValue = binding.sliderPhysicalActivity.value
+        val waterValue = binding.sliderWaterIntake.value
         return RecommendationRequest(
             age = binding.etAge.text.toString().toInt(),
             height = heightCm / 100f,
@@ -143,10 +145,12 @@ class ProfileFragment : Fragment() {
             scc = binding.actvScc.text.toString(),
             calc = binding.actvCalc.text.toString(),
             mtrans = binding.actvMtrans.text.toString(),
-            physical_activity = binding.sliderPhysicalActivity.value,
-            water_intake = binding.sliderWaterIntake.value,
+            physical_activity = activityValue,
+            water_intake = waterValue,
             ncp = binding.actvNcp.text.toString().toFloat(),
-            tue = binding.actvTue.text.toString().toFloat()
+            tue = binding.actvTue.text.toString().toFloat(),
+            faf = activityValue,
+            ch2o = waterValue
         )
     }
 
@@ -161,8 +165,10 @@ class ProfileFragment : Fragment() {
                     is NetworkResult.Success -> {
                         binding.progressIndicator.hide()
                         binding.btnGetRecommendation.isEnabled = true
+                        val parcelable = result.data.toParcelable()
+                        viewModel.resetState()
                         val bundle = Bundle().apply {
-                            putParcelable("recommendation", result.data.toParcelable())
+                            putParcelable("recommendation", parcelable)
                         }
                         findNavController().navigate(R.id.action_profile_to_dashboard, bundle)
                     }

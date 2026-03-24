@@ -351,7 +351,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:valueFrom="0.0"
-                    android:valueTo="5.0"
+                    android:valueTo="10.0"
                     android:value="2.0"
                     android:stepSize="0.5"/>
 

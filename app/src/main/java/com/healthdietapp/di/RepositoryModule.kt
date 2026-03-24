@@ -1,6 +1,7 @@
 package com.healthdietapp.di
 
 import com.healthdietapp.data.repository.AuthRepository
+import com.healthdietapp.data.repository.HistoryRepository
 import com.healthdietapp.data.repository.RecommendationRepository
 import com.healthdietapp.data.api.ApiService
 import dagger.Module
@@ -23,5 +24,11 @@ object RepositoryModule {
     @Singleton
     fun provideRecommendationRepository(apiService: ApiService): RecommendationRepository {
         return RecommendationRepository(apiService)
+    }
+
+    @Provides
+    @Singleton
+    fun provideHistoryRepository(apiService: ApiService): HistoryRepository {
+        return HistoryRepository(apiService)
     }
 }

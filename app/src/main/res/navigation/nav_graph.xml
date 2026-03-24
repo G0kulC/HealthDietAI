@@ -14,8 +14,8 @@
             app:popUpTo="@id/splashFragment"
             app:popUpToInclusive="true"/>
         <action
-            android:id="@+id/action_splash_to_dashboard"
-            app:destination="@id/dashboardFragment"
+            android:id="@+id/action_splash_to_profile"
+            app:destination="@id/profileFragment"
             app:popUpTo="@id/splashFragment"
             app:popUpToInclusive="true"/>
     </fragment>
@@ -52,17 +52,28 @@
         <action
             android:id="@+id/action_profile_to_dashboard"
             app:destination="@id/dashboardFragment"/>
+        <action
+            android:id="@+id/action_profile_to_history"
+            app:destination="@id/historyFragment"/>
     </fragment>
 
     <fragment
         android:id="@+id/dashboardFragment"
         android:name="com.healthdietapp.ui.dashboard.DashboardFragment"
-        android:label="Dashboard">
+        android:label="Results">
         <argument
             android:name="recommendation"
             app:argType="com.healthdietapp.data.model.RecommendationResponseParcelable"
             app:nullable="true"
             android:defaultValue="@null"/>
+        <action
+            android:id="@+id/action_dashboard_to_history"
+            app:destination="@id/historyFragment"/>
     </fragment>
+
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.healthdietapp.ui.history.HistoryFragment"
+        android:label="History"/>
 
 </navigation>

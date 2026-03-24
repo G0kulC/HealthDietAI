@@ -41,9 +41,17 @@ class DashboardFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setupRecyclerView()
 
+        // Hide shimmer by default - data comes from parcelable args, not async loading
+        binding.shimmerLayout.stopShimmer()
+        binding.shimmerLayout.hide()
+        binding.tvEmptyFoods.hide()
+        binding.rvFoods.hide()
+
         val recommendation = arguments?.getParcelable<RecommendationResponseParcelable>("recommendation")
         if (recommendation != null) {
             displayResults(recommendation)
+        } else {
+            binding.tvEmptyFoods.show()
         }
 
         binding.swipeRefresh.setOnRefreshListener {
@@ -52,6 +60,14 @@ class DashboardFragment : Fragment() {
 
         binding.fabShare.setOnClickListener {
             recommendation?.let { shareResults(it) }
+        }
+
+        binding.btnHistory.setOnClickListener {
+            findNavController().navigate(R.id.action_dashboard_to_history)
+        }
+
+        binding.btnNewAnalysis.setOnClickListener {
+            findNavController().navigateUp()
         }
     }
 
